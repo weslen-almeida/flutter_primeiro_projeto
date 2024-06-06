@@ -5,6 +5,7 @@ enum PopupMenuPages {
   rows_columns,
   media_query,
   layout_builder,
+  botoes_rotacao_texto,
 }
 
 class HomePage extends StatelessWidget {
@@ -33,6 +34,9 @@ class HomePage extends StatelessWidget {
                   case PopupMenuPages.layout_builder:
                   Navigator.of(context).pushNamed('/layout_builder');
                   break;
+                   case PopupMenuPages.botoes_rotacao_texto:
+                  Navigator.of(context).pushNamed('/botoes_rotacao_texto');
+                  break;
                 }
               },
               itemBuilder: (BuildContext context) {
@@ -52,6 +56,10 @@ class HomePage extends StatelessWidget {
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.layout_builder,
                     child: Text('layout_builder'),
+                  ),
+                  const PopupMenuItem<PopupMenuPages>(
+                    value: PopupMenuPages.botoes_rotacao_texto,
+                    child: Text('botoes_rotacao_texto'),
                   ),
                 ];
               })
