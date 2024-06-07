@@ -27,8 +27,86 @@ class BotoesRotacaoTextoPage extends StatelessWidget {
               ],
             ),
             TextButton(
-              onPressed: (){},
-              child: child)
+              onPressed: () {},
+              child: Text('Botão de Texto'),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.amber[100],
+                padding: const EdgeInsets.all(15),
+                minimumSize: const Size(50, 10),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(60),
+                  ),
+                ),
+              ),
+            ),
+            IconButton(
+              onPressed: (() {}),
+              icon: const Icon(Icons.exit_to_app),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Elevated Button'),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.yellow,
+                padding: const EdgeInsets.all(15),
+                minimumSize: const Size(120, 50),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.airplane_ticket),
+              label: const Text('Botão com icone'),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                iconColor: Colors.green[200],
+                shadowColor: Colors.red,
+                minimumSize: const Size(120, 50),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Botão Customizado'),
+              style: ButtonStyle(
+                shadowColor: MaterialStateProperty.all(Colors.blue),
+                minimumSize: MaterialStateProperty.resolveWith(
+                  (states) {
+                    if(states.contains(MaterialState.pressed)) {
+                      return Size(180, 180);
+                    } else if(states.contains(MaterialState.hovered)) {
+                      return Size(150, 150);
+                    }
+                    return Size(120, 50)
+                  }
+                ),
+                backgroundColor: MaterialStateProperty.resolveWith((states) {
+                  if(states.contains(MaterialState.pressed)) {
+                      return Colors.black;
+                    } else if(states.contains(MaterialState.hovered)) {
+                      return Colors.amber;
+                    }
+                    return Colors.red;
+                })
+              ),
+            ),
           ],
         ),
       ),
