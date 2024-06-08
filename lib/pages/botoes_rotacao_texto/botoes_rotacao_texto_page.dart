@@ -23,7 +23,7 @@ class BotoesRotacaoTextoPage extends StatelessWidget {
                     child: const Text('Texto Rotacionado'),
                   ),
                 ),
-                Icon(Icons.ac_unit_outlined)
+                const Icon(Icons.ac_unit_outlined)
               ],
             ),
             TextButton(
@@ -84,17 +84,17 @@ class BotoesRotacaoTextoPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Botão Customizado'),
+              child: const Text('Botão Customizado'),
               style: ButtonStyle(
                 shadowColor: MaterialStateProperty.all(Colors.blue),
                 minimumSize: MaterialStateProperty.resolveWith(
                   (states) {
                     if(states.contains(MaterialState.pressed)) {
-                      return Size(180, 180);
+                      return const Size(180, 180);
                     } else if(states.contains(MaterialState.hovered)) {
                       return Size(150, 150);
                     }
-                    return Size(120, 50)
+                    return const Size(120, 50);
                   }
                 ),
                 backgroundColor: MaterialStateProperty.resolveWith((states) {
@@ -107,6 +107,55 @@ class BotoesRotacaoTextoPage extends StatelessWidget {
                 })
               ),
             ),
+            const SizedBox(
+              height: 15,
+            ),
+            InkWell(
+              onTap: (){},
+              child: Text('InkWell'),
+            ),
+             const SizedBox(
+              height: 15,
+            ),
+            GestureDetector(
+              child: const Text('Gesture detector'),
+              onTap: (){},
+              onVerticalDragStart: (_) => print('Start $_'),
+            ),
+             const SizedBox(
+              height: 15,
+            ),
+            Container(
+              width: 150,
+              height: 80,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.blue,
+                    Colors.red
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(50),
+                boxShadow:[
+                 BoxShadow(
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                  color: Colors.green,
+                ),
+              ]),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(50),
+                onTap: (){},
+                child: Center(
+                  child: const Text(
+                    'Criando o botão',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
