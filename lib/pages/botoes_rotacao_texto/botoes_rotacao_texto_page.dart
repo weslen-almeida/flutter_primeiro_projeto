@@ -84,7 +84,7 @@ class BotoesRotacaoTextoPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {},
-              child: const Text('Botão Customizado'),
+              child: Text('Botão Customizado'),
               style: ButtonStyle(
                 shadowColor: MaterialStateProperty.all(Colors.blue),
                 minimumSize: MaterialStateProperty.resolveWith(
@@ -129,14 +129,14 @@ class BotoesRotacaoTextoPage extends StatelessWidget {
               width: 150,
               height: 80,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [
                     Colors.blue,
                     Colors.red
                   ],
                 ),
                 borderRadius: BorderRadius.circular(50),
-                boxShadow:[
+                boxShadow: const[
                  BoxShadow(
                   blurRadius: 10,
                   offset: Offset(0, 5),
@@ -146,8 +146,8 @@ class BotoesRotacaoTextoPage extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(50),
                 onTap: (){},
-                child: Center(
-                  child: const Text(
+                child: const Center(
+                  child: Text(
                     'Criando o botão',
                     style: TextStyle(
                       color: Colors.white,
