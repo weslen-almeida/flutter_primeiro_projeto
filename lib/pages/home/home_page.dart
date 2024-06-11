@@ -6,7 +6,8 @@ enum PopupMenuPages {
   media_query,
   layout_builder,
   botoes_rotacao_texto,
-  single_child_scroll_view_page
+  single_child_scroll_view_page,
+  listview_page,
 }
 
 class HomePage extends StatelessWidget {
@@ -41,6 +42,9 @@ class HomePage extends StatelessWidget {
                   case PopupMenuPages.single_child_scroll_view_page:
                   Navigator.of(context).pushNamed('/single_child_scroll_view_page');
                     break;
+                  case PopupMenuPages.listview_page:
+                  Navigator.of(context).pushNamed('/listview_page');
+                    break;
                 }
               },
               itemBuilder: (BuildContext context) {
@@ -68,6 +72,10 @@ class HomePage extends StatelessWidget {
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.single_child_scroll_view_page,
                     child: Text('single_child_scroll_view_page'),
+                  ),
+                  const PopupMenuItem<PopupMenuPages>(
+                    value: PopupMenuPages.listview_page,
+                    child: Text('listview_page'),
                   ),
                 ];
               })
