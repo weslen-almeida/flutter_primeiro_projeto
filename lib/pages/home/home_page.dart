@@ -75,15 +75,15 @@ class HomePage extends StatelessWidget {
                   ),
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.single_child_scroll_view_page,
-                    child: Text('single_child_scroll_view_page'),
+                    child: Text('single_child_scroll_view'),
                   ),
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.listview_page,
-                    child: Text('listview_page'),
+                    child: Text('listview'),
                   ),
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.dialogs_page,
-                    child: Text('dialogs_page'),
+                    child: Text('dialogs'),
                   ),
                 ];
               })
