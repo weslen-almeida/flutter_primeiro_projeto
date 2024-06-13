@@ -47,31 +47,66 @@ class DialogsPage extends StatelessWidget {
               },
               child: const Text('Simple Dialog'),
             ),
-            ElevatedButton(onPressed: () {
-              showDialog(
-                context: context, 
-                builder: (context){
-                  return AlertDialog(
-                    title: const Text('Alert Dialog'),
-                    content: const SingleChildScrollView(
-                      child: ListBody(
-                        children: [
-                          Padding(padding: EdgeInsets.all(10.0),
-                          child: Text('Deseja realmente salvar'),
-                          )
-                        ],),
-                    ),
-                    actions: [
-                      TextButton(onPressed: (){}, child: const Text('Cancelar')),
-                      TextButton(onPressed: (){}, child: const Text('Confirmar')),
-                    ],
+            ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: const Text('Alert Dialog'),
+                        content: const SingleChildScrollView(
+                          child: ListBody(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: Text('Deseja realmente salvar'),
+                              )
+                            ],
+                          ),
+                        ),
+                        actions: [
+                          TextButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: const Text('Cancelar')),
+                          TextButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: const Text('Confirmar')),
+                        ],
+                      );
+                    },
                   );
                 },
-                );
-            }, child: Text('Alert Dialog')),
+                child: const Text('Alert Dialog')),
             ElevatedButton(
-                onPressed: () {}, child: Text('Timer Picker Dialog')),
-            ElevatedButton(onPressed: () {}, child: Text('Date Picker Dialog')),
+              onPressed: () async {
+                final selectTime = await showTimePicker(
+                  context: context,
+                  initialTime: TimeOfDay.now(),
+                );
+                print('O horario selecionado foi ${selectTime}');
+              },
+              child: const Text('Timer Picker Dialog'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                final selectDate = await showDatePicker(
+                  context: context,
+                  firstDate: DateTime(2010),
+                  lastDate: DateTime(2024),
+                );
+                print('A data selecionada foi ${selectDate}');
+              },
+              child: const Text('Date Picker Dialog'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                showAboutDialog(
+                  context: context,
+                  applicationIcon: Icon(Icons.flutter_dash),
+                );
+              },
+              child: const Text('About Dialog'),
+            )
           ],
         ),
       ),
