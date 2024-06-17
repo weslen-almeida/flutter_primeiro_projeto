@@ -9,6 +9,7 @@ enum PopupMenuPages {
   single_child_scroll_view_page,
   listview_page,
   dialogs_page,
+  snackbar
 }
 
 class HomePage extends StatelessWidget {
@@ -19,7 +20,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
-        backgroundColor: Colors.green,
         actions: [
           PopupMenuButton<PopupMenuPages>(
               tooltip: 'Selecione o menu',
@@ -48,6 +48,9 @@ class HomePage extends StatelessWidget {
                     break;
                   case PopupMenuPages.dialogs_page:
                   Navigator.of(context).pushNamed('/dialogs_page');
+                    break;
+                  case PopupMenuPages.snackbar:
+                  Navigator.of(context).pushNamed('/snackbar');
                     break;
                 }
               },
@@ -84,6 +87,10 @@ class HomePage extends StatelessWidget {
                   const PopupMenuItem<PopupMenuPages>(
                     value: PopupMenuPages.dialogs_page,
                     child: Text('dialogs'),
+                  ),
+                   const PopupMenuItem<PopupMenuPages>(
+                    value: PopupMenuPages.snackbar,
+                    child: Text('snackbar'),
                   ),
                 ];
               })
