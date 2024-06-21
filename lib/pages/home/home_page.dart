@@ -19,6 +19,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.sizeOf(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
@@ -37,28 +39,29 @@ class HomePage extends StatelessWidget {
                     Navigator.of(context).pushNamed('/media_query');
                     break;
                   case PopupMenuPages.layout_builder:
-                  Navigator.of(context).pushNamed('/layout_builder');
+                    Navigator.of(context).pushNamed('/layout_builder');
                     break;
                   case PopupMenuPages.botoes_rotacao_texto:
-                  Navigator.of(context).pushNamed('/botoes_rotacao_texto');
+                    Navigator.of(context).pushNamed('/botoes_rotacao_texto');
                     break;
                   case PopupMenuPages.single_child_scroll_view_page:
-                  Navigator.of(context).pushNamed('/single_child_scroll_view_page');
+                    Navigator.of(context)
+                        .pushNamed('/single_child_scroll_view_page');
                     break;
                   case PopupMenuPages.listview_page:
-                  Navigator.of(context).pushNamed('/listview_page');
+                    Navigator.of(context).pushNamed('/listview_page');
                     break;
                   case PopupMenuPages.dialogs_page:
-                  Navigator.of(context).pushNamed('/dialogs_page');
+                    Navigator.of(context).pushNamed('/dialogs_page');
                     break;
                   case PopupMenuPages.snackbar:
-                  Navigator.of(context).pushNamed('/snackbar');
+                    Navigator.of(context).pushNamed('/snackbar');
                     break;
                   case PopupMenuPages.forms_page:
-                  Navigator.of(context).pushNamed('/forms_page');
+                    Navigator.of(context).pushNamed('/forms_page');
                     break;
                   case PopupMenuPages.cidades_page:
-                  Navigator.of(context).pushNamed('/cidades_page');
+                    Navigator.of(context).pushNamed('/cidades_page');
                     break;
                 }
               },
@@ -112,7 +115,27 @@ class HomePage extends StatelessWidget {
               })
         ],
       ),
-      body: Container(),
+      body: Center(
+        child: Container(
+          height: mediaQuery.height * .3,
+          child: const Column(
+            children: [
+              Text(
+                'Primeiro Projeto em flutter',
+                style: TextStyle(fontSize: 25, color: Colors.blue),
+              ),
+              Text(
+                'Aprendendo Widgets basicos',
+                 style: TextStyle(fontSize: 18),
+              ),
+              Text(
+                'Escolha no menu acima as opções',
+                 style: TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
