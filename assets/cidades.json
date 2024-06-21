@@ -1,22 +1,22 @@
 [
     {
-        "cidade": "São Paulo",
-        "estado": "SP"
+        "city": "São Paulo",
+        "state": "SP"
     },
     {
-        "cidade": "Santo André",
-        "estado": "SP"
+        "city": "Santo André",
+        "state": "SP"
     },
     {
-        "cidade": "Guarulhos",
-        "estado": "SP"
+        "city": "Guarulhos",
+        "state": "SP"
     },
     {
-        "cidade": "São Caetano",
-        "estado": "SP"
+        "city": "São Caetano",
+        "state": "SP"
     },
     {
-        "cidade": "São Bernardo do Campo",
-        "estado": "SP"
+        "city": "São Bernardo do Campo",
+        "state": "SP"
     }
 ]

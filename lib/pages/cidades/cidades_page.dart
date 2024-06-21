@@ -39,8 +39,8 @@ class _CidadesPageState extends State<CidadesPage> {
         itemBuilder: (context, index) {
         var cidade = cidades[index];
         return ListTile(
-          title: Text(cidade.city),
-          subtitle: Text(cidade.state),
+          title: Text('Cidade: ${cidade.city}'),
+          subtitle: Text('Estado: ${cidade.state}'),
         );
       }),
     );
