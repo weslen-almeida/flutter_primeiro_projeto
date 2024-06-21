@@ -129,7 +129,7 @@ class HomePage extends StatelessWidget {
                  style: TextStyle(fontSize: 18),
               ),
               Text(
-                'Escolha no menu acima as opções',
+                'Clica no menu acima e navegue nas opções',
                  style: TextStyle(fontSize: 18),
               ),
             ],
